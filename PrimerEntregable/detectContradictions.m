@@ -1,5 +1,3 @@
-function [contradiction] = detectContradictions(MeR)
-    lastRow = size(MeR);
-    lastRow = MeR(lastRow(1), :);
-    contradiction = lastRow(:,length(lastRow)-1) ~= 0 & lastRow(:,length(lastRow)) == 0;
+function [contradiction] = detectContradictions(row)
+    contradiction = row(:,length(row)) ~= 0 && row(:,length(row)-1) == 0;
 end
