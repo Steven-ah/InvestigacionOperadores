@@ -1,32 +1,28 @@
-A = [7 12;5 20];
+global A
+A = [7 15 23;8 16 24;9 17 25];
 nRows = size(A);
 nCols = nRows(2);
 nRows = nRows(1);
-cont=1;
-resultado=zeros(nCols+nRows);
+global adM;
+adM=zeros(nCols*nCols);
 
 for i=1:nCols
    if i==nCols
         aux2=-1;
-        aux3=0;
-        aux4=1;
    else
         aux2=1;
-        aux3=1;
-        aux4=0;
    end
    for j=1:nRows
       if j==nRows
           aux=-1;
       else
           aux=1;
-      end 
-      resultado(cont,j+(nCols*aux3))=abs(A(j,i) - A(j,i+(1*aux2))); %%% Se puede mantener
-      resultado(j+(nCols*aux3),cont)=resultado(cont,j+(nCols*aux3));
-      resultado(j+(1*aux)+(nCols*aux4),cont)=abs(A(j,i) - A(j+(1*aux),i)); %%%% Debe de tener bifurcacion
-      resultado(cont,j+(1*aux)+(nCols*aux4))=resultado(j+(1*aux)+(nCols*aux4),cont);
-      resultado(cont,j+(nCols*aux3)+(1*aux))=abs(A(j,i) - A(j+(1*aux),i+(1*aux2))); %% debe de tener bifurcacion.
-      resultado(j+(nCols*aux3)+(1*aux),cont)=resultado(cont,j+(nCols*aux3)+(1*aux));
-      cont=cont+1;
+      end
+        obtainNeighboorValue(j,i,j,i+(1*aux2)); %%% Vecino de la derecha o izquierda
+        obtainNeighboorValue(j,i,j+(1*aux),i); %%% Vecino inferior o superior
+        if j > 1 && j < nRows
+         obtainNeighboorValue(j,i,j-1,i+(1*aux2)); %%% Vecino de la diagonal superior
+        end
+        obtainNeighboorValue(j,i,j+(1*aux),i+(1*aux2)); %%% Vecino de la diagonal inferior
    end
 end

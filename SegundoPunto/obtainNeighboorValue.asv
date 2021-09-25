@@ -1,0 +1,7 @@
+function [adM] = obtainNeighboorValue(a,b,c,d,A)
+      global
+      indexA=find(A==A(a,b));
+      indexB=find(A==A(c,d));
+      adM(indexA, indexB)=abs(A(a,b) - A(c,d)); %%% Se puede mantener
+      adM(indexB, indexA)=adM(indexA, indexB);
+end
