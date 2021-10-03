@@ -1,5 +1,5 @@
 global A
-A = [1 4 7;2 5 8;3 6 9];
+A = [7 15;22 9];
 nRows = size(A);
 nCols = nRows(2);
 nRows = nRows(1);

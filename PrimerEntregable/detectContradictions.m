@@ -1,3 +1,5 @@
 function [contradiction] = detectContradictions(row)
-    contradiction = row(:,length(row)) ~= 0 && row(:,length(row)-1) == 0;
+    lastElement = row(end);
+    row = row(1:(end-1));
+    contradiction = isempty(find(row,1)) && lastElement ~= 0;
 end

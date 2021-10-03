@@ -23,7 +23,7 @@ contradiction = find(contradictions); %%% Obtenemos posiciones de las contradicc
 %%
 %%%%%%%%%% Verificación del tipo de resultados %%%%%%%%%%%%%%%%%%%
 
-disp("Matriz original")
+disp("Matriz original aumentada")
 disp(A);
 disp("Matriz escalonada reducida")
 disp(B);
