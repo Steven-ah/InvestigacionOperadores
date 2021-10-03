@@ -6,7 +6,7 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Input Network as Adjacency Matrix
-     f = 0;s=1;t=10;%s= nodo origen, t=nodo destino
+     f = 0;s=1;t=9;%s= nodo origen, t=nodo destino
     len = length(cap);
         
 %% Ford-Fulkerson Algorithm

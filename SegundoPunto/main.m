@@ -1,8 +1,10 @@
 global A
-A = [7 15 23;8 16 24;9 17 25];
+A = [1 4 7;2 5 8;3 6 9];
 nRows = size(A);
 nCols = nRows(2);
 nRows = nRows(1);
+global index;
+index = reshape(find(A==A),nCols,nRows);
 global adM;
 adM=zeros(nCols*nCols);
 

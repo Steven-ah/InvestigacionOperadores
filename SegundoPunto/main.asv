@@ -1,8 +1,9 @@
 global A
-A = [7 12 1;5 20 2;3 28 4];
+A = [7 15 23;8 7 24;9 17 25];
 nRows = size(A);
 nCols = nRows(2);
 nRows = nRows(1);
+index = 1;
 global adM;
 adM=zeros(nCols*nCols);
 
@@ -24,5 +25,6 @@ for i=1:nCols
          obtainNeighboorValue(j,i,j-1,i+(1*aux2)); %%% Vecino de la diagonal superior
         end
         obtainNeighboorValue(j,i,j+(1*aux),i+(1*aux2)); %%% Vecino de la diagonal inferior
+        index=index=1;
    end
 end
