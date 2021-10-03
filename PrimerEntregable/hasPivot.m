@@ -1,6 +1,7 @@
 function [pivot] = hasPivot(col)
-    noZero = find(col);
-    if ~isempty(noZero) && length(noZero) > 1
+    col = col(1:(end-1));
+    noZero = find(col, 1);
+    if isempty(noZero)
         pivot = false;
     else
         pivot = true;
