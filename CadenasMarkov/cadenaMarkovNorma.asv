@@ -1,0 +1,11 @@
+%%% Solo funciona para matrices cu
+
+function [k, V] = cadenaMarkovNorma(A, p0, normP, normV)
+    k = 0;
+    i = inf;
+    while i > normP
+        i = norm(A^k*p0 - A^(k+1)*p0, normV);
+        V = A^k*p0;
+        k = k + 1;
+    end
+end
